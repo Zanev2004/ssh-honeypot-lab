@@ -1,0 +1,13 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - /home/cowrie/cowrie/cowrie-env/lib/python3.12/var/log/cowrie/cowrie.json*
+  json.keys_under_root: true
+  json.add_error_key: true
+
+output.elasticsearch:
+  hosts: ["localhost:9200"]
+
+setup.kibana:
+  host: "localhost:5601"
